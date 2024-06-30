@@ -1,0 +1,216 @@
+/*-- scss:defaults --*/
+// Define the primary brand colors
+$uwa-blue: #003087;
+$uwa-gold: #DAAA00;
+$uwa-black: #000000;
+$uwa-white: #FFFFFF;
+
+// Define the secondary brand colors
+$teal: #00B2A9;
+$mid-blue: #0086D6;
+$cyan: #48BED8;
+$tan: #A39382;
+$green: #6CC24A;
+
+// Define the alternative brand colors
+$red: #C5003E;
+$orange: #FF8200;
+$yellow: #FFD100;
+$purple: #A51890;
+
+// Font families
+$primary-font: 'TT Norms', sans-serif;
+$secondary-font: 'Novel Pro', serif;
+$alternative-font: 'Montserrat', sans-serif;
+$alternative-serif-font: 'Merriweather', serif;
+$system-sans: 'Century Gothic', 'Arial', sans-serif;
+$system-serif: 'Palatino Linotype', 'Georgia', serif;
+
+html {
+  font-size: 24.3333px; // Set the base font size (1em = 21.3333px which is approximately 16pt)
+}
+
+.reveal .slide .half-width-plot {
+    width: 50%; /* This ensures the plot uses 50% of the slide width */
+    margin: auto; /* Centers the plot within the slide */
+}
+
+.reveal .slide .threeqt-width-plot {
+    width: 75%; /* This ensures the plot uses 75% of the slide width */
+    margin: auto; /* Centers the plot within the slide */
+}
+
+/*-- scss:rules --*/
+.reveal {
+  // Background and text colors
+  background-color: $uwa-white;
+  color: $uwa-black;
+  margin: auto;
+
+  // Font settings
+  font-family: $primary-font, $alternative-font, $system-sans;
+  font-size: 1em; // Set the default font size for body text (1em = 21.3333px)
+
+  a {
+    color: $mid-blue;
+    &:hover {
+      color: $cyan;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $secondary-font, $alternative-serif-font, $system-serif;
+    color: $uwa-blue;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  code {
+    background-color: $tan;
+    color: $uwa-black;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  blockquote {
+    border-left: 5px solid $uwa-gold;
+    padding-left: 1em;
+    color: $uwa-blue;
+  }
+
+  .text-uwa-blue { color: $uwa-blue; }
+  .text-uwa-gold { color: $uwa-gold; }
+  .text-uwa-black { color: $uwa-black; }
+  .text-red { color: $red; }
+  .text-teal { color: $teal; }
+  .text-mid-blue { color: $mid-blue; }
+  .text-cyan { color: $cyan; }
+  .text-tan { color: $tan; }
+  .text-green { color: $green; }
+
+  .bg-uwa-blue { background-color: $uwa-blue; color: $uwa-white; }
+  .bg-uwa-gold { background-color: $uwa-gold; color: $uwa-black; }
+  .bg-uwa-black { background-color: $uwa-black; color: $uwa-white; }
+  .bg-teal { background-color: $teal; color: $uwa-black; }
+  .bg-mid-blue { background-color: $mid-blue; color: $uwa-white; }
+  .bg-cyan { background-color: $cyan; color: $uwa-black; }
+  .bg-tan { background-color: $tan; color: $uwa-black; }
+  .bg-green { background-color: $green; color: $uwa-black; }
+
+  .slides {
+    .slide {
+      padding: 2em;
+      &.important {
+        border: 2px solid $uwa-gold;
+        background-color: $uwa-white;
+      }
+    }
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
+  
+  .inline-fragment {
+    display: flex;
+  }
+
+  .inline-fragment p {
+    padding-right: 10px;
+  }
+}
+
+vcenter {
+  vertical-align: middle;
+}
+
+.background-column {
+  background: url('../media/images/harvester.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.background-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25); /* Darker color with alpha */
+}
+
+.background-column img {
+  display: none;
+}
+.mermaid {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+.mermaid .label {
+    fill: #003087; /* UWA Blue */
+}
+
+.mermaid .node rect {
+    fill: #DAAA00; /* UWA Gold for decision boxes */
+    stroke: #003087; /* UWA Blue for borders */
+    stroke-width: 2px;
+}
+
+.mermaid .node path {
+    fill: #6CC24A; /* Green for action boxes */
+    stroke: #003087; /* UWA Blue for borders */
+    stroke-width: 2px;
+}
+
+.mermaid .edgePath path {
+    stroke: #48BED8; /* Cyan for connectors */
+    stroke-width: 2px;
+}
+
+.mermaid .node text {
+    fill: #000000; /* Black for text */
+}
+
+table {
+    font-size: 0.75em; /* Decrease font size */
+}
+
+table th, table td {
+    padding: 5px;
+}
+/* Custom styles for shapes and images */
+.relative-container {
+  position: relative; /* Parent element with relative positioning */
+}
+
+.image-with-shape {
+  width: 100%; /* Ensure the image fits within the container */
+}
+
+.shape-rectangle {
+  width: 100px;
+  height: 50px;
+  background-color: rgba(0, 48, 135, 0.7); /* UWA Blue with opacity */
+  position: absolute; /* Absolute positioning within the relative container */
+  top: 20px; /* Adjust top position */
+  left: 20px; /* Adjust left position */
+  z-index: 1; /* Ensure it is on top of the image */
+  color: white; /* Text color inside the rectangle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+.side-by-side {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.side-by-side img {
+  max-width: 45%; /* Adjust the width as needed */
+  height: auto;
+}
